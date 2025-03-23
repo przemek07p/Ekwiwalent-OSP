@@ -9,6 +9,10 @@ namespace bazy
         public Form1()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.AutoScaleMode = AutoScaleMode.Dpi;  // Skalowanie w zale¿noœci od DPI
+            this.AutoSize = true;
+            this.AutoSizeMode = AutoSizeMode.GrowAndShrink;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -47,18 +51,19 @@ namespace bazy
 
             if (string.IsNullOrWhiteSpace(tableName))
             {
-                MessageBox.Show("Please enter a table name.");
+                MessageBox.Show("Wpisz nazwê nowego kwarta³u .");
                 return;
             }
 
             string createTableQuery = $@"
-                CREATE TABLE `{tableName}` (
-                    `id` INT AUTO_INCREMENT PRIMARY KEY,
+                CREATE TABLE `{tableName}` (                    
                     `Imiê i Nazwisko` VARCHAR(255),
-                    `Czas` TIME,
-                    `Stawka` DECIMAL(10,2),
-                    `Data` DATE,
-                    `NrZdarzenia` INT
+                    `Nr Zdarzenia` TEXT(255),
+                    `Czas` INT(255),
+                    `Czas Szkolenia` INT(255),
+                    `Stawka` INT(255),
+                    `Data` VARCHAR(25)
+                    
                 );";
 
             try
@@ -68,13 +73,13 @@ namespace bazy
                     connection.Open();
                     MySqlCommand cmd = new MySqlCommand(createTableQuery, connection);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show($"Table '{tableName}' created successfully.");
+                    //MessageBox.Show($"Table '{tableName}' created successfully.");
                     LoadTables();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+
             }
         }
 
@@ -97,7 +102,6 @@ namespace bazy
                     connection.Open();
                     MySqlCommand cmd = new MySqlCommand(dropTableQuery, connection);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show($"Table '{tableName}' deleted successfully.");
                     LoadTables();
                 }
             }
@@ -107,10 +111,7 @@ namespace bazy
             }
         }
 
-        private void buttonRefresh_Click(object sender, EventArgs e)
-        {
-            LoadTables();
-        }
+
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
@@ -118,7 +119,7 @@ namespace bazy
 
             if (string.IsNullOrWhiteSpace(selectedTable))
             {
-                MessageBox.Show("Please select a table.");
+                MessageBox.Show("Wybierz Kwarta³.");
                 return;
             }
 
@@ -126,5 +127,12 @@ namespace bazy
             form2.Show();
             this.Hide();
         }
+        private void buttonRatownicy_Click(object sender, EventArgs e)
+        {
+            Form4 form4 = new Form4();
+            form4.Show();
+        }
+
+       
     }
 }

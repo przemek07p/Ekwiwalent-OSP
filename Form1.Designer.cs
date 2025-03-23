@@ -5,101 +5,102 @@
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.ComboBox comboBoxTables;
         private System.Windows.Forms.Button buttonNext;
-        private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.Button buttonAddTable;
         private System.Windows.Forms.Button buttonDeleteTable;
         private System.Windows.Forms.TextBox textBoxTableName;
         private System.Windows.Forms.ListBox listBoxTables;
+        private System.Windows.Forms.Button buttonRatownicy;
 
         private void InitializeComponent()
         {
-            this.buttonRefresh = new System.Windows.Forms.Button();
-            this.buttonAddTable = new System.Windows.Forms.Button();
-            this.buttonDeleteTable = new System.Windows.Forms.Button();
-            this.textBoxTableName = new System.Windows.Forms.TextBox();
-            this.listBoxTables = new System.Windows.Forms.ListBox();
-            this.comboBoxTables = new System.Windows.Forms.ComboBox();
-            this.buttonNext = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // buttonRefresh
-            // 
-            this.buttonRefresh.Location = new System.Drawing.Point(278, 10);
-            this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(75, 23);
-            this.buttonRefresh.TabIndex = 1;
-            this.buttonRefresh.Text = "Refresh";
-            this.buttonRefresh.UseVisualStyleBackColor = true;
-            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            buttonAddTable = new Button();
+            buttonDeleteTable = new Button();
+            textBoxTableName = new TextBox();
+            listBoxTables = new ListBox();
+            comboBoxTables = new ComboBox();
+            buttonNext = new Button();
+            buttonRatownicy = new Button();
+            SuspendLayout();
             // 
             // buttonAddTable
             // 
-            this.buttonAddTable.Location = new System.Drawing.Point(278, 68);
-            this.buttonAddTable.Name = "buttonAddTable";
-            this.buttonAddTable.Size = new System.Drawing.Size(75, 23);
-            this.buttonAddTable.TabIndex = 2;
-            this.buttonAddTable.Text = "Add Table";
-            this.buttonAddTable.UseVisualStyleBackColor = true;
-            this.buttonAddTable.Click += new System.EventHandler(this.buttonAddTable_Click);
+            buttonAddTable.Location = new Point(278, 56);
+            buttonAddTable.Name = "buttonAddTable";
+            buttonAddTable.Size = new Size(75, 23);
+            buttonAddTable.TabIndex = 2;
+            buttonAddTable.Text = "Dodaj";
+            buttonAddTable.UseVisualStyleBackColor = true;
+            buttonAddTable.Click += buttonAddTable_Click;
             // 
             // buttonDeleteTable
             // 
-            this.buttonDeleteTable.Location = new System.Drawing.Point(278, 97);
-            this.buttonDeleteTable.Name = "buttonDeleteTable";
-            this.buttonDeleteTable.Size = new System.Drawing.Size(75, 23);
-            this.buttonDeleteTable.TabIndex = 3;
-            this.buttonDeleteTable.Text = "Delete Table";
-            this.buttonDeleteTable.UseVisualStyleBackColor = true;
-            this.buttonDeleteTable.Click += new System.EventHandler(this.buttonDeleteTable_Click);
+            buttonDeleteTable.Location = new Point(278, 85);
+            buttonDeleteTable.Name = "buttonDeleteTable";
+            buttonDeleteTable.Size = new Size(75, 23);
+            buttonDeleteTable.TabIndex = 3;
+            buttonDeleteTable.Text = "Usuń";
+            buttonDeleteTable.UseVisualStyleBackColor = true;
+            buttonDeleteTable.Click += buttonDeleteTable_Click;
             // 
             // textBoxTableName
             // 
-            this.textBoxTableName.Location = new System.Drawing.Point(12, 70);
-            this.textBoxTableName.Name = "textBoxTableName";
-            this.textBoxTableName.Size = new System.Drawing.Size(260, 20);
-            this.textBoxTableName.TabIndex = 4;
+            textBoxTableName.Location = new Point(12, 56);
+            textBoxTableName.Name = "textBoxTableName";
+            textBoxTableName.Size = new Size(260, 23);
+            textBoxTableName.TabIndex = 4;
             // 
             // listBoxTables
             // 
-            this.listBoxTables.FormattingEnabled = true;
-            this.listBoxTables.Location = new System.Drawing.Point(12, 97);
-            this.listBoxTables.Name = "listBoxTables";
-            this.listBoxTables.Size = new System.Drawing.Size(260, 147);
-            this.listBoxTables.TabIndex = 5;
+            listBoxTables.FormattingEnabled = true;
+            listBoxTables.ItemHeight = 15;
+            listBoxTables.Location = new Point(12, 85);
+            listBoxTables.Name = "listBoxTables";
+            listBoxTables.Size = new Size(260, 139);
+            listBoxTables.TabIndex = 5;
             // 
             // comboBoxTables
             // 
-            this.comboBoxTables.FormattingEnabled = true;
-            this.comboBoxTables.Location = new System.Drawing.Point(12, 12);
-            this.comboBoxTables.Name = "comboBoxTables";
-            this.comboBoxTables.Size = new System.Drawing.Size(260, 21);
-            this.comboBoxTables.TabIndex = 6;
+            comboBoxTables.FormattingEnabled = true;
+            comboBoxTables.Location = new Point(12, 12);
+            comboBoxTables.Name = "comboBoxTables";
+            comboBoxTables.Size = new Size(260, 23);
+            comboBoxTables.TabIndex = 6;
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(278, 126);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(75, 23);
-            this.buttonNext.TabIndex = 7;
-            this.buttonNext.Text = "Next";
-            this.buttonNext.UseVisualStyleBackColor = true;
-            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
+            buttonNext.Location = new Point(278, 10);
+            buttonNext.Name = "buttonNext";
+            buttonNext.Size = new Size(75, 23);
+            buttonNext.TabIndex = 7;
+            buttonNext.Text = "Dalej";
+            buttonNext.UseVisualStyleBackColor = true;
+            buttonNext.Click += buttonNext_Click;
+            // 
+            // buttonRatownicy
+            // 
+            buttonRatownicy.Location = new Point(278, 201);
+            buttonRatownicy.Name = "buttonRatownicy";
+            buttonRatownicy.Size = new Size(75, 23);
+            buttonRatownicy.TabIndex = 8;
+            buttonRatownicy.Text = "Ratownicy";
+            buttonRatownicy.UseVisualStyleBackColor = true;
+            buttonRatownicy.Click += buttonRatownicy_Click;
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(365, 256);
-            this.Controls.Add(this.buttonNext);
-            this.Controls.Add(this.comboBoxTables);
-            this.Controls.Add(this.listBoxTables);
-            this.Controls.Add(this.textBoxTableName);
-            this.Controls.Add(this.buttonDeleteTable);
-            this.Controls.Add(this.buttonAddTable);
-            this.Controls.Add(this.buttonRefresh);
-            this.Name = "Form1";
-            this.Text = "Database Manager";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            ClientSize = new Size(363, 237);
+            Controls.Add(buttonRatownicy);
+            Controls.Add(buttonNext);
+            Controls.Add(comboBoxTables);
+            Controls.Add(listBoxTables);
+            Controls.Add(textBoxTableName);
+            Controls.Add(buttonDeleteTable);
+            Controls.Add(buttonAddTable);
+            Name = "Form1";
+            Text = "Database Manager";
+            Load += Form1_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
     }
 }

@@ -8,36 +8,54 @@
 
         private void InitializeComponent()
         {
-            this.dataGridView1 = new DataGridView();
-            this.buttonZapisz = new Button();
-            this.SuspendLayout();
+            dataGridView1 = new DataGridView();
+            buttonZapisz = new Button();
+            buttonCofnij = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
             // 
             // dataGridView1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(760, 407);
-            this.dataGridView1.TabIndex = 0;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(12, 12);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(622, 350);
+            dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // buttonZapisz
             // 
-            this.buttonZapisz.Location = new System.Drawing.Point(697, 425);
-            this.buttonZapisz.Name = "buttonZapisz";
-            this.buttonZapisz.Size = new System.Drawing.Size(75, 23);
-            this.buttonZapisz.TabIndex = 1;
-            this.buttonZapisz.Text = "Zapisz";
-            this.buttonZapisz.UseVisualStyleBackColor = true;
-            this.buttonZapisz.Click += new EventHandler(this.buttonZapisz_Click);
+            buttonZapisz.Location = new Point(559, 368);
+            buttonZapisz.Name = "buttonZapisz";
+            buttonZapisz.Size = new Size(75, 23);
+            buttonZapisz.TabIndex = 1;
+            buttonZapisz.Text = "Zapisz";
+            buttonZapisz.UseVisualStyleBackColor = true;
+            buttonZapisz.Click += buttonZapisz_Click;
+            // 
+            // buttonCofnij
+            // 
+            buttonCofnij.Location = new Point(478, 368);
+            buttonCofnij.Name = "buttonCofnij";
+            buttonCofnij.Size = new Size(75, 23);
+            buttonCofnij.TabIndex = 2;
+            buttonCofnij.Text = "Powrót";
+            buttonCofnij.UseVisualStyleBackColor = true;
+            buttonCofnij.Click += buttonCofnij_Click;
             // 
             // Form3
             // 
-            this.ClientSize = new System.Drawing.Size(784, 461);
-            this.Controls.Add(this.buttonZapisz);
-            this.Controls.Add(this.dataGridView1);
-            this.Name = "Form3";
-            this.Text = "Form3";
-            this.ResumeLayout(false);
+            ClientSize = new Size(639, 400);
+            Controls.Add(buttonCofnij);
+            Controls.Add(buttonZapisz);
+            Controls.Add(dataGridView1);
+            Name = "Form3";
+            Text = "Form3";
+            FormClosing += Form3_FormClosing_1;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
         }
+
+        private Button buttonCofnij;
     }
 }
